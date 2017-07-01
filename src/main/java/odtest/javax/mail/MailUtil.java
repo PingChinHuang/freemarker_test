@@ -36,8 +36,8 @@ public class MailUtil {
 	
 	private static Properties QuerySMTPAccountConfig() {
 		Properties props = new Properties();
-		props.put("mail.smtp.host", "smtp.gmail.com");
-		props.put("mail.smtp.sender", "");
+		props.put("mail.smtp.host", "mail.audy.com");
+		props.put("mail.smtp.sender", "audy@mail.audy.com");
 		props.put("mail.smtp.username", "");
 		props.put("mail.smtp.password", "");
 		return props;
@@ -46,15 +46,19 @@ public class MailUtil {
 	private static Properties QuerySMTPSecureConfig() {
 		Properties props = new Properties();
 		//TLS
-		props.put("mail.smtp.port", "587");
-		props.put("mail.smtp.starttls.enable", "true");
-		props.put("mail.smtp.auth", "true");
+		//props.put("mail.smtp.port", "587");
+		//props.put("mail.smtp.starttls.enable", "true");
+		//props.put("mail.smtp.auth", "true");
 		
 		//SSL
 		//props.put("mail.smtp.port", "465");
 		//props.put("mail.smtp.socketFactory.port", "465");
 		//props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		//props.put("mail.smtp.auth", "true");
+		
+		//None
+		props.put("mail.smtp.port", "25");	
+		props.put("mail.smtp.auth", "false");
 		return props;
 	} 
 	
